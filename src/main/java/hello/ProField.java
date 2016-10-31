@@ -9,6 +9,7 @@ public class ProField {
     private String str2;
 
 
+
     public String getStr2() {
         return str2;
     }

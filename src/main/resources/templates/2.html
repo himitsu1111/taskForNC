@@ -22,6 +22,18 @@
             <td><p th:text="${proField.str2}" /></td>
         </tr>
     </table>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>VALUE</th>
+
+        </tr>
+        <tr th:each="s : ${al1}">
+            <td th:text="${s.str1}">Onions</td>
+            <td th:text="${s.str2}">2.41</td>
+
+        </tr>
+    </table>
 </table>
 
 
