@@ -8,8 +8,8 @@
 
         <h1>New Field</h1>
         <form action="#" th:action="@{/1}" th:object="${3}" method="post">
-            <input type="text" th:field="*{str1}" />
-            <input type="text" th:field="*{str2}" />
+            <input type="text" name="s1" th:field="*{str1}" />
+            <input type="text" name="s2" th:field="*{str2}" />
             <input type="submit" name="newf" value="Submit"/>
         </form>
 
