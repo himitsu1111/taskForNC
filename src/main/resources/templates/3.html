@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        add page
+    </title>
+    <body>
+
+        <h1>New Field</h1>
+        <form action="#" th:action="@{/1}" th:object="${3}" method="post">
+            <input type="text" th:field="*{str1}" />
+            <input type="text" th:field="*{str2}" />
+            <input type="submit" name="newf" value="Submit"/>
+        </form>
+
+
+
+    </body>
+
+</head>
+</html>

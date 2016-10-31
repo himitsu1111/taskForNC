@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handing Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<table>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+        </tr>
+        <tr>
+
+            <td><p th:text="${greeting.id}" /></td>
+            <td><p th:text="${greeting.content}" /></td>
+        </tr>
+        <tr>
+            <td><p th:text="${proField.str1}" /></td>
+            <td><p th:text="${proField.str2}" /></td>
+        </tr>
+    </table>
+</table>
+
+
+<a href="/1">Submit another message</a>
+</body>
+</html>

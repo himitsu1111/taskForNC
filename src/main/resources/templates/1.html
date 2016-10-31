@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handing Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var addDiv = $('#addinput');
+            var i = $('#addinput p').size() + 1;
+
+            $('#addNew').live('click', function() {
+                $('<p><input type="text" id="p_new" size="40" name="p_new_' + i +'" value="" placeholder="I am New" /><a href="#" id="remNew">'+ document.getElementById('p_new').value +'</a> </p>').appendTo(addDiv);
+                i++;
+
+                return false;
+            });
+
+            $('#remNew').live('click', function() {
+                if( i > 2 ) {
+                    $(this).parents('p').remove();
+                    i--;
+                }
+                return false;
+            });
+        });
+
+    </script>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/1}" th:object="${1}" method="post">
+    <p>Id: <input type="text" th:field="*{id}" /></p>
+    <p>Name: <input type="text" th:field="*{content}" /></p>
+    <!--<p th:text="*{str1}"/>-->
+    <p><input type="submit" value="Submit" /> </p>
+</form>
+<form action="#" th:action="@{/3}" th:object="${3}" method="post">
+
+    <!--<div id="addinput">-->
+        <!--<p>-->
+
+    <p>   <input type="text" th:field="*{str1}"/> </p>
+    <p>   <input type="text" th:field="*{str2}"/> </p>
+                   <!--id="p_new" size="20" name="p_new" value="" placeholder="Input Value" /><a href="#" id="addNew">Add</a> &ndash;&gt;-->
+        <!--</p>-->
+    <!--</div>-->
+
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
