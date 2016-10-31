@@ -12,7 +12,8 @@ import java.util.ArrayList;
 @Controller
 public class MyController {
     private ProField pf;
-    ArrayList<ProField> al;
+    private ArrayList<ProField> al;
+    private SaverClass sc = new SaverClass();
     @RequestMapping(value="/1", method= RequestMethod.GET)
     public String greetingForm(Model model) {
         al = new ArrayList<>();
@@ -33,6 +34,7 @@ public class MyController {
 
         model.addAttribute("1", greeting);
         model.addAttribute("al1", al);
+        model.addAttribute("al2", sc);
 
         return "2";
     }
@@ -43,6 +45,7 @@ public class MyController {
         proField.setStr1(s);
         proField.setStr2(s2);
         pf = proField;
+        sc.setS(s);
         model.addAttribute("3", proField);
     }
 
