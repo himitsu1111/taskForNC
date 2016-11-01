@@ -11,7 +11,6 @@
 <form action="#" th:action="@{/1}" th:object="${1}" method="post">
     <p>Id: <input type="text" th:field="*{id}" /></p>
     <p>Name: <input type="text" th:field="*{content}" /></p>
-    <!--<p th:text="*{str1}"/>-->
     <script type="text/javascript">
         $(function() {
             var addDiv = $('#addinput');
@@ -40,35 +39,12 @@
     </script>
     <div id="addinput">
         <p>
-
-            <!--<input type="text" th:field="*{str1}"/> <input type="text" th:field="*{str2}"/> </p>-->
-
-
         </p>
     </div>
     <p><input type="submit" value="Submit" /> </p>
 </form>
-<!--<form action="/3" method="get">&lt;!&ndash;th:action="@{/3}" th:object="${3}" method="post"> &ndash;&gt;-->
-<!--<form action="#" th:action="@{/1}" th:modelAttribute="${ProField}" method="get">-->
     <input type="text" id="p_new" size="20" name="p_new" value="" placeholder="Input Value" />
-    <!--<a href="#" id="addNew">Add</a> --><input type="button" id="addNew" value="A N"/>
-<!--</form>-->
+    <input type="button" id="addNew" value="A N"/>
 
-
-    <!--<a href="/3"> to three </a>-->
-
-<!--</form>-->
-<!--<table>-->
-    <!--<tr>-->
-        <!--<th>NAME</th>-->
-        <!--<th>VALUE</th>-->
-
-    <!--</tr>-->
-    <!--<tr th:each="s : ${al}">-->
-        <!--<td th:text="${s.str1}"></td>-->
-        <!--<td th:text="${s.str2}"></td>-->
-
-    <!--</tr>-->
-<!--</table>-->
 </body>
 </html>
