@@ -3,29 +3,8 @@
 <head>
     <title>Getting Started: Handing Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!--<script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
-    <!--<script type="text/javascript">-->
-        <!--$(function() {-->
-            <!--var addDiv = $('#addinput');-->
-            <!--var i = $('#addinput p').size() + 1;-->
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 
-            <!--$('#addNew').live('click', function() {-->
-                <!--$('<p><input type="text" id="p_new" size="40" name="p_new_' + i +'" value="" placeholder="I am New" /><a href="#" id="remNew">'+ document.getElementById('p_new').value +'</a> </p>').appendTo(addDiv);-->
-                <!--i++;-->
-
-                <!--return false;-->
-            <!--});-->
-
-            <!--$('#remNew').live('click', function() {-->
-                <!--if( i > 2 ) {-->
-                    <!--$(this).parents('p').remove();-->
-                    <!--i&#45;&#45;;-->
-                <!--}-->
-                <!--return false;-->
-            <!--});-->
-        <!--});-->
-
-    <!--</script>-->
 </head>
 <body>
 <h1>Form</h1>
@@ -33,33 +12,63 @@
     <p>Id: <input type="text" th:field="*{id}" /></p>
     <p>Name: <input type="text" th:field="*{content}" /></p>
     <!--<p th:text="*{str1}"/>-->
+    <script type="text/javascript">
+        $(function() {
+            var addDiv = $('#addinput');
+            var i = $('#addinput p').size() + 1;
+
+            $('#addNew').live('click', function() {
+                $('<p><label> ' + document.getElementById('p_new').value + '</label><input type="text" name="p_new_' + i
+                        +'"  /><input type="hidden" value="' + document.getElementById('p_new').value
+                        + '" name="l_' + i
+                        + '" /><input type="hidden" value="' + i + '" name="lastField" /> </p>').appendTo(addDiv);
+                //alert(i);
+                i++;
+
+                return false;
+            });
+
+            $('#remNew').live('click', function() {
+                if( i > 2 ) {
+                    $(this).parents('p').remove();
+                    i--;
+                }
+                return false;
+            });
+        });
+
+    </script>
+    <div id="addinput">
+        <p>
+
+            <!--<input type="text" th:field="*{str1}"/> <input type="text" th:field="*{str2}"/> </p>-->
+
+
+        </p>
+    </div>
     <p><input type="submit" value="Submit" /> </p>
 </form>
-<form action="#" th:action="@{/3}" th:object="${3}" method="post">
-
-    <!--<div id="addinput">-->
-        <!--<p>-->
-
-    <!--<p>   <input type="text" th:field="*{str1}"/> <input type="text" th:field="*{str2}"/> </p>-->
-    <p>    </p>
-                   <!--id="p_new" size="20" name="p_new" value="" placeholder="Input Value" /><a href="#" id="addNew">Add</a> &ndash;&gt;-->
-        <!--</p>-->
-    <!--</div>-->
+<!--<form action="/3" method="get">&lt;!&ndash;th:action="@{/3}" th:object="${3}" method="post"> &ndash;&gt;-->
+<!--<form action="#" th:action="@{/1}" th:modelAttribute="${ProField}" method="get">-->
+    <input type="text" id="p_new" size="20" name="p_new" value="" placeholder="Input Value" />
+    <!--<a href="#" id="addNew">Add</a> --><input type="button" id="addNew" value="A N"/>
+<!--</form>-->
 
 
-    <input type="submit" value="NewField"/>
-</form>
-<table>
-    <tr>
-        <th>NAME</th>
-        <th>VALUE</th>
+    <!--<a href="/3"> to three </a>-->
 
-    </tr>
-    <tr th:each="s : ${al}">
-        <td th:text="${s.str1}">Onions</td>
-        <td th:text="${s.str2}">2.41</td>
+<!--</form>-->
+<!--<table>-->
+    <!--<tr>-->
+        <!--<th>NAME</th>-->
+        <!--<th>VALUE</th>-->
 
-    </tr>
-</table>
+    <!--</tr>-->
+    <!--<tr th:each="s : ${al}">-->
+        <!--<td th:text="${s.str1}"></td>-->
+        <!--<td th:text="${s.str2}"></td>-->
+
+    <!--</tr>-->
+<!--</table>-->
 </body>
 </html>

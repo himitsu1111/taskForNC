@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by seven on 30.10.2016.
  */
+
 @ComponentScan
 @EnableAutoConfiguration
 public class Application {

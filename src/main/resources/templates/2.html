@@ -9,41 +9,30 @@
 <table>
     <table>
         <tr>
-            <td>ID</td>
-            <td>NAME</td>
+            <td>Name</td>
+            <td>Value</td>
         </tr>
         <tr>
 
             <td><p th:text="${greeting.id}" /></td>
             <td><p th:text="${greeting.content}" /></td>
         </tr>
-        <tr>
-            <td><p th:text="${proField.str1}" /></td>
-            <td><p th:text="${proField.str2}" /></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>NAME</th>
-            <th>VALUE</th>
-
-        </tr>
         <tr th:each="s : ${al1}">
-            <td th:text="${s.str1}">Onions</td>
-            <td th:text="${s.str2}">2.41</td>
+            <td th:text="${s.str1}"></td>
+            <td th:text="${s.str2}"></td>
 
         </tr>
     </table>
-    <table>
-        <tr>
-            <th>NAME2</th>
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>NAME2</th>-->
 
-        </tr>
-        <tr th:each="s : ${al2}">
-            <td th:text="${s.str1}">Onions</td>
-            <td th:text="${s.str2}">Onions</td>
-        </tr>
-    </table>
+        <!--</tr>-->
+        <!--<tr th:each="s : ${al2}">-->
+            <!--<td th:text="${s.str1}">Onions</td>-->
+            <!--<td th:text="${s.str2}">Onions</td>-->
+        <!--</tr>-->
+    <!--</table>-->
 </table>
 
 
